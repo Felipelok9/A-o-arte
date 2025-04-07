@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conteúdo VIP</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    img.logo {
+      max-width: 100px;
+      margin: 10px auto 20px;
+    }
+
+    .carousel {
+      width: 100%;
+      max-width: 320px;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background-color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .atendente-btn {
+      background-color: #128C7E;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px #25D366;
+      transition: 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .atendente-btn:hover {
+      background-color: #0d6e5d;
+      box-shadow: 0 0 15px #25D366;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 22px;
+      color: gold;
+      margin-bottom: 20px;
+    }
+
+    .perguntas {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 300px;
+      text-align: left;
+    }
+
+    .pergunta {
+      background: #111;
+      border-radius: 10px;
+      padding: 15px;
+      border: 1px solid #333;
+    }
+
+    .pergunta legend {
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+      color: #f1f1f1;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    label input {
+      margin-right: 10px;
+    }
+
+    #confirmar {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 16px 24px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 30px;
+      display: none;
+      width: 100%;
+      max-width: 280px;
+      box-shadow: 0 0 20px #25D366;
+      transition: all 0.3s ease;
+    }
+
+    #confirmar:hover {
+      background: linear-gradient(135deg, #1ebe5d, #0d6e5d);
+      box-shadow: 0 0 25px #25D366;
+      transform: scale(1.05);
+    }
+
+    .instagram-preview {
+      margin-top: 40px;
+      width: 100%;
+      max-width: 360px;
+      height: 500px;
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .carousel-indicators {
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+    }
+
+    .indicator {
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .indicator.active {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="https://i.imgur.com/C9G2jVe.jpeg" class="logo" alt="Logo">
+
+  <div class="carousel">
+    <img src="https://i.imgur.com/I6Vu5oi.jpeg" class="slide active" alt="Slide 1">
+    <img src="https://i.imgur.com/rlXkxwD.jpeg" class="slide" alt="Slide 2">
+    <img src="https://i.imgur.com/lm0w2aA.jpeg" class="slide" alt="Slide 3">
+    <img src="https://i.imgur.com/QEpZAly.jpeg" class="slide" alt="Slide 4">
+    <div class="carousel-indicators"></div>
+  </div>
+
+  <a href="https://wa.me/+555193769494" class="atendente-btn">👩‍💬 Atendente</a>
+
+  <h2>🔔 Antes de acessar ao grupo VIP, responda às perguntas abaixo:</h2>
+
+  <div class="perguntas">
+    <fieldset class="pergunta">
+      <legend>Você confirma que é maior de 18 anos?</legend>
+      <label><input type="radio" name="idade" value="sim">Sim</label>
+      <label><input type="radio" name="idade" value="nao">Não</label>
+    </fieldset>
+
+    <fieldset class="pergunta">
+      <legend>Você gosta de itens de coleção?</legend>
+      <label><input type="radio" name="colecao" value="sim">Sim</label>
+      <label><input type="radio" name="colecao" value="nao">Não</label>
+    </fieldset>
+
+    <fieldset class="pergunta">
+      <legend>Deseja ativar seu desconto de 10% agora?</legend>
+      <label><input type="radio" name="desconto" value="sim">Sim</label>
+      <label><input type="radio" name="desconto" value="nao">Não</label>
+    </fieldset>
+  </div>
+
+  <button id="confirmar" onclick="window.location.href='https://chat.whatsapp.com/G3z12fym25G33YA32svNAC'">✅ Acessar o Grupo VIP</button>
+
+  <iframe class="instagram-preview" src="https://www.instagram.com/acoeartebr/embed" allowtransparency="true"></iframe>
+
+  <script>
+    const perguntas = document.querySelectorAll('.pergunta');
+    const confirmarBtn = document.getElementById('confirmar');
+
+    function verificarRespostas() {
+      let idade = document.querySelector('input[name="idade"]:checked');
+      let colecao = document.querySelector('input[name="colecao"]:checked');
+      let desconto = document.querySelector('input[name="desconto"]:checked');
+
+      if (idade && colecao && desconto) {
+        if (idade.value === "sim") {
+          confirmarBtn.style.display = 'block';
+        } else {
+          confirmarBtn.style.display = 'none';
+        }
+      } else {
+        confirmarBtn.style.display = 'none';
+      }
+    }
+
+    perguntas.forEach(pergunta => {
+      pergunta.addEventListener('change', verificarRespostas);
+    });
+
+    const slides = document.querySelectorAll('.slide');
+    const indicatorsContainer = document.querySelector('.carousel-indicators');
+    let currentSlide = 0;
+
+    slides.forEach((_, index) => {
+      let indicator = document.createElement("div");
+      indicator.classList.add("indicator");
+      if (index === 0) indicator.classList.add("active");
+      indicator.addEventListener("click", () => mudarSlide(index));
+      indicatorsContainer.appendChild(indicator);
+    });
+
+    let indicators = document.querySelectorAll(".indicator");
+
+    function mudarSlide(index) {
+      slides[currentSlide].classList.remove("active");
+      indicators[currentSlide].classList.remove("active");
+      currentSlide = index;
+      slides[currentSlide].classList.add("active");
+      indicators[currentSlide].classList.add("active");
+    }
+
+    function trocarSlide() {
+      let next = (currentSlide + 1) % slides.length;
+      mudarSlide(next);
+      setTimeout(trocarSlide, 4000);
+    }
+
+    setTimeout(trocarSlide, 4000);
+  </script>
+</body>
+</html>
